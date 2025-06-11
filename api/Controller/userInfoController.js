@@ -14,7 +14,9 @@ const logOut = async (req, res) => {
   try {
     res.clearCookie("token", {
       httpOnly: true,
-      secure: false, // only if using HTTPS
+      maxAge: 3600000 * 2,
+      secure: true,
+      sameSite: "None", // only if using HTTPS
     });
     res.status(200).json({ msg: "Logout successfully!" });
   } catch (e) {
