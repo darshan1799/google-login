@@ -20,7 +20,7 @@ const authController = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       maxAge: 3600000 * 2,
-      secure: false,
+      secure: true,
       sameSite: "None",
     });
     res.status(200).json({ msg: "login sucessfully!" });
