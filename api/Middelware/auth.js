@@ -13,7 +13,7 @@ const auth = async (req, res, next) => {
       next();
     }
   } catch (e) {
-    return res.status(401).json({ msg: "Unauthorized Access" });
+    return res.status(401).json({ msg: "Unauthorized Access", err: e.message });
   }
 };
 module.exports = auth;

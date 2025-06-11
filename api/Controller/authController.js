@@ -21,6 +21,7 @@ const authController = async (req, res) => {
       httpOnly: true,
       maxAge: 3600000 * 2,
       secure: false,
+      sameSite: "None",
     });
     res.status(200).json({ msg: "login sucessfully!" });
   } catch (e) {
