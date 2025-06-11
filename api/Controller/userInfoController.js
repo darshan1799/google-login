@@ -16,7 +16,7 @@ const logOut = async (req, res) => {
       httpOnly: true,
       maxAge: 3600000 * 2,
       secure: true,
-      sameSite: "None", // only if using HTTPS
+      sameSite: "None",
     });
     res.status(200).json({ msg: "Logout successfully!" });
   } catch (e) {
