@@ -18,8 +18,7 @@ const logOut = async (req, res) => {
       secure: true,
       sameSite: "None",
     });
-    localStorage.clear();
-    sessionStorage.clear();
+
     res.status(200).json({ msg: "Logout successfully!" });
   } catch (e) {
     return res.status(500).json({ msg: "Internal server Error !" });

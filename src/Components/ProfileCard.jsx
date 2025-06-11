@@ -15,6 +15,8 @@ export default function ProfileCard() {
     const res = await logoutRes.json();
     if (logoutRes.ok) {
       toast.success(res.msg);
+      localStorage.clear();
+      sessionStorage.clear();
       await checkAuth();
     } else {
       toast.error(res.msg);
